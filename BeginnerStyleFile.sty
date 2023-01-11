@@ -1,0 +1,280 @@
+\ProvidesPackage{hkpstyle}
+\usepackage[top = 2cm, bottom = 2cm, left = 3cm, right = 3cm]{geometry}
+
+
+% ------------------------ %
+%         Packages         %
+% ------------------------ %
+
+% Mathematics packages
+\usepackage{
+	amsmath,			% Math Environments
+	amssymb,			% Extended Symbols
+	amsthm,             % Theorem Environments
+	mathrsfs            % Special Scripts
+}
+
+% Coding
+\usepackage{
+    ifthen              % Write if then statements
+}
+
+% Figures and drawing
+\usepackage{
+	graphicx,           % Import Graphics
+	pgfplots,           % Build Function Plots
+	tikz,               % Build Figures
+	tikz-cd             % Build Commutative Diagrams
+}
+\pgfplotsset{width=10cm,compat=1.9}
+\usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    filecolor = magenta,
+    urlcolor = cyan
+}
+\urlstyle{same}
+
+\setlength{\parindent}{0cm}                         % Changes default paragraph indent
+
+
+% ------------------------ %
+%         Commands         %
+% ------------------------ %
+
+
+% General text & formatting
+
+\newcommand{\enquote}[1]{``#1"}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+
+% Math Commands
+
+\newcommand{\ds}{\displaystyle}                     % Easier to type than \displaystyle
+\renewcommand{\qedsymbol}{$\blacksquare$}           % Makes end-of-proof symbol a black square
+
+
+% Common Sets
+
+% Math mode:                        In-text:
+\newcommand{\N}{\mathbb{N}}         \newcommand{\naturals}{$\mathbb{N}$ }
+\newcommand{\Z}{\mathbb{Z}}         \newcommand{\integers}{$\mathbb{Z}$ }
+\newcommand{\Q}{\mathbb{Q}}         \newcommand{\rationals}{$\mathbb{Q}$ }
+\newcommand{\A}{\mathbb{A}}         \newcommand{\algebraics}{$\mathbb{A}$ }
+\newcommand{\R}{\mathbb{R}}         \newcommand{\reals}{$\mathbb{R}$ }
+\newcommand{\C}{\mathbb{C}}         \newcommand{\complexes}{$\mathbb{C}$ }
+
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\rng}{\mathrm{rng}}
+\newcommand{\minus}{\setminus}                      % Quicker setminus
+
+ 
+% Algebra
+\newcommand{\lcm}{\mathrm{lcm}}                     % Not provided by amsmath.
+                                                    % Dual to \gcd
+
+
+% ---------------------------------- %
+%           Environments             %
+% ---------------------------------- %
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+
+% Formats for building new theorem environments:
+%
+%   \newtheoremstyle{stylename}     name of the style to be used
+%       {spaceabove}                measure of space to leave above the theorem. E.g.: 3pt
+%       {spacebelow}                measure of space to leave below the theorem. E.g.: 3pt
+%       {bodyfont}                  name of font to use in the body of the theorem
+%       {indent}                    measure of space to indent
+%       {headfont}                  name of head font
+%       {headpunctuation}           punctuation between head and body
+%       {headspace}                 space after theorem head; " " = normal interword space
+%       {headspec}                  manually specify head
+%
+%   \newenvironment{name}           name of the new environment
+%       [numarg]                    number of arguments
+%       [optarg_default]            makes first argument optional and provides default
+%                                   value for first argument
+%       {begin_def}                 code executed at beginning of environment
+%       {end_def}                   code executed at end of environment
+
+
+% -------------------------------------------- %
+%         Blackboard Bold Math Letters         %
+% -------------------------------------------- %
+
+% Uppercase
+\newcommand{\Ablb}{\mathbb{A}}         \newcommand{\Nblb}{\mathbb{N}}
+\newcommand{\Bblb}{\mathbb{B}}         \newcommand{\Oblb}{\mathbb{O}}
+\newcommand{\Cblb}{\mathbb{C}}         \newcommand{\Pblb}{\mathbb{P}}
+\newcommand{\Dblb}{\mathbb{D}}         \newcommand{\Qblb}{\mathbb{Q}}
+\newcommand{\Eblb}{\mathbb{E}}         \newcommand{\Rblb}{\mathbb{R}}
+\newcommand{\Fblb}{\mathbb{F}}         \newcommand{\Sblb}{\mathbb{S}}
+\newcommand{\Gblb}{\mathbb{G}}         \newcommand{\Tblb}{\mathbb{T}}
+\newcommand{\Hblb}{\mathbb{H}}         \newcommand{\Ublb}{\mathbb{U}}
+\newcommand{\Iblb}{\mathbb{I}}         \newcommand{\Vblb}{\mathbb{V}}
+\newcommand{\Jblb}{\mathbb{J}}         \newcommand{\Wblb}{\mathbb{W}}
+\newcommand{\Kblb}{\mathbb{K}}         \newcommand{\Xblb}{\mathbb{X}}
+\newcommand{\Lblb}{\mathbb{L}}         \newcommand{\Yblb}{\mathbb{Y}}
+\newcommand{\Mblb}{\mathbb{M}}         \newcommand{\Zblb}{\mathbb{Z}}
+
+% Lowercase
+\newcommand{\ablb}{\mathbb{a}}         \newcommand{\nblb}{\mathbb{n}}
+\newcommand{\bblb}{\mathbb{b}}         \newcommand{\oblb}{\mathbb{o}}
+\newcommand{\cblb}{\mathbb{c}}         \newcommand{\pblb}{\mathbb{p}}
+\newcommand{\dblb}{\mathbb{d}}         \newcommand{\qblb}{\mathbb{q}}
+\newcommand{\eblb}{\mathbb{e}}         \newcommand{\rblb}{\mathbb{r}}
+\newcommand{\fblb}{\mathbb{f}}         \newcommand{\sblb}{\mathbb{s}}
+\newcommand{\gblb}{\mathbb{g}}         \newcommand{\tblb}{\mathbb{t}}
+\newcommand{\hblb}{\mathbb{h}}         \newcommand{\ublb}{\mathbb{u}}
+\newcommand{\iblb}{\mathbb{i}}         \newcommand{\vblb}{\mathbb{v}}
+\newcommand{\jblb}{\mathbb{j}}         \newcommand{\wblb}{\mathbb{w}}
+\newcommand{\kblb}{\mathbb{k}}         \newcommand{\xblb}{\mathbb{x}}
+\newcommand{\lblb}{\mathbb{l}}         \newcommand{\yblb}{\mathbb{y}}
+\newcommand{\mblb}{\mathbb{m}}         \newcommand{\zblb}{\mathbb{z}}
+
+% -------------------------------------------- %
+%           Calligraphic Math Letters          %
+% -------------------------------------------- %
+
+% Uppercase
+\newcommand{\Acal}{\mathcal{A}}         \newcommand{\Ncal}{\mathcal{N}}
+\newcommand{\Bcal}{\mathcal{B}}         \newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\Ccal}{\mathcal{C}}         \newcommand{\Pcal}{\mathcal{P}}
+\newcommand{\Dcal}{\mathcal{D}}         \newcommand{\Qcal}{\mathcal{Q}}
+\newcommand{\Ecal}{\mathcal{E}}         \newcommand{\Rcal}{\mathcal{R}}
+\newcommand{\Fcal}{\mathcal{F}}         \newcommand{\Scal}{\mathcal{S}}
+\newcommand{\Gcal}{\mathcal{G}}         \newcommand{\Tcal}{\mathcal{T}}
+\newcommand{\Hcal}{\mathcal{H}}         \newcommand{\Ucal}{\mathcal{U}}
+\newcommand{\Ical}{\mathcal{I}}         \newcommand{\Vcal}{\mathcal{V}}
+\newcommand{\Jcal}{\mathcal{J}}         \newcommand{\Wcal}{\mathcal{W}}
+\newcommand{\Kcal}{\mathcal{K}}         \newcommand{\Xcal}{\mathcal{X}}
+\newcommand{\Lcal}{\mathcal{L}}         \newcommand{\Ycal}{\mathcal{Y}}
+\newcommand{\Mcal}{\mathcal{M}}         \newcommand{\Zcal}{\mathcal{Z}}
+
+% Lowercase
+\newcommand{\acal}{\mathcal{a}}         \newcommand{\ncal}{\mathcal{n}}
+\newcommand{\bcal}{\mathcal{b}}         \newcommand{\ocal}{\mathcal{o}}
+\newcommand{\ccal}{\mathcal{c}}         \newcommand{\pcal}{\mathcal{p}}
+\newcommand{\dcal}{\mathcal{d}}         \newcommand{\qcal}{\mathcal{q}}
+\newcommand{\ecal}{\mathcal{e}}         \newcommand{\rcal}{\mathcal{r}}
+\newcommand{\fcal}{\mathcal{f}}         \newcommand{\scal}{\mathcal{s}}
+\newcommand{\gcal}{\mathcal{g}}         \newcommand{\tcal}{\mathcal{t}}
+\newcommand{\hcal}{\mathcal{h}}         \newcommand{\ucal}{\mathcal{u}}
+\newcommand{\ical}{\mathcal{i}}         \newcommand{\vcal}{\mathcal{v}}
+\newcommand{\jcal}{\mathcal{j}}         \newcommand{\wcal}{\mathcal{w}}
+\newcommand{\kcal}{\mathcal{k}}         \newcommand{\xcal}{\mathcal{x}}
+\newcommand{\lcal}{\mathcal{l}}         \newcommand{\ycal}{\mathcal{y}}
+\newcommand{\mcal}{\mathcal{m}}         \newcommand{\zcal}{\mathcal{z}}
+
+% -------------------------------------------- %
+%           Fraktur Math Letters          %
+% -------------------------------------------- %
+
+% Uppercase
+\newcommand{\Afrak}{\mathfrak{A}}         \newcommand{\Nfrak}{\mathfrak{N}}
+\newcommand{\Bfrak}{\mathfrak{B}}         \newcommand{\Ofrak}{\mathfrak{O}}
+\newcommand{\Cfrak}{\mathfrak{C}}         \newcommand{\Pfrak}{\mathfrak{P}}
+\newcommand{\Dfrak}{\mathfrak{D}}         \newcommand{\Qfrak}{\mathfrak{Q}}
+\newcommand{\Efrak}{\mathfrak{E}}         \newcommand{\Rfrak}{\mathfrak{R}}
+\newcommand{\Ffrak}{\mathfrak{F}}         \newcommand{\Sfrak}{\mathfrak{S}}
+\newcommand{\Gfrak}{\mathfrak{G}}         \newcommand{\Tfrak}{\mathfrak{T}}
+\newcommand{\Hfrak}{\mathfrak{H}}         \newcommand{\Ufrak}{\mathfrak{U}}
+\newcommand{\Ifrak}{\mathfrak{I}}         \newcommand{\Vfrak}{\mathfrak{V}}
+\newcommand{\Jfrak}{\mathfrak{J}}         \newcommand{\Wfrak}{\mathfrak{W}}
+\newcommand{\Kfrak}{\mathfrak{K}}         \newcommand{\Xfrak}{\mathfrak{X}}
+\newcommand{\Lfrak}{\mathfrak{L}}         \newcommand{\Yfrak}{\mathfrak{Y}}
+\newcommand{\Mfrak}{\mathfrak{M}}         \newcommand{\Zfrak}{\mathfrak{Z}}
+
+% Lowercase
+\newcommand{\afrak}{\mathfrak{a}}         \newcommand{\nfrak}{\mathfrak{n}}
+\newcommand{\bfrak}{\mathfrak{b}}         \newcommand{\ofrak}{\mathfrak{o}}
+\newcommand{\cfrak}{\mathfrak{c}}         \newcommand{\pfrak}{\mathfrak{p}}
+\newcommand{\dfrak}{\mathfrak{d}}         \newcommand{\qfrak}{\mathfrak{q}}
+\newcommand{\efrak}{\mathfrak{e}}         \newcommand{\rfrak}{\mathfrak{r}}
+\newcommand{\ffrak}{\mathfrak{f}}         \newcommand{\sfrak}{\mathfrak{s}}
+\newcommand{\gfrak}{\mathfrak{g}}         \newcommand{\tfrak}{\mathfrak{t}}
+\newcommand{\hfrak}{\mathfrak{h}}         \newcommand{\ufrak}{\mathfrak{u}}
+\newcommand{\ifrak}{\mathfrak{i}}         \newcommand{\vfrak}{\mathfrak{v}}
+\newcommand{\jfrak}{\mathfrak{j}}         \newcommand{\wfrak}{\mathfrak{w}}
+\newcommand{\kfrak}{\mathfrak{k}}         \newcommand{\xfrak}{\mathfrak{x}}
+\newcommand{\lfrak}{\mathfrak{l}}         \newcommand{\yfrak}{\mathfrak{y}}
+\newcommand{\mfrak}{\mathfrak{m}}         \newcommand{\zfrak}{\mathfrak{z}}
+
+% -------------------------------------------- %
+%              Script Math Letters             %
+% -------------------------------------------- %
+
+% Uppercase
+\newcommand{\Ascr}{\mathscr{A}}         \newcommand{\Nscr}{\mathscr{N}}
+\newcommand{\Bscr}{\mathscr{B}}         \newcommand{\Oscr}{\mathscr{O}}
+\newcommand{\Cscr}{\mathscr{C}}         \newcommand{\Pscr}{\mathscr{P}}
+\newcommand{\Dscr}{\mathscr{D}}         \newcommand{\Qscr}{\mathscr{Q}}
+\newcommand{\Escr}{\mathscr{E}}         \newcommand{\Rscr}{\mathscr{R}}
+\newcommand{\Fscr}{\mathscr{F}}         \newcommand{\Sscr}{\mathscr{S}}
+\newcommand{\Gscr}{\mathscr{G}}         \newcommand{\Tscr}{\mathscr{T}}
+\newcommand{\Hscr}{\mathscr{H}}         \newcommand{\Uscr}{\mathscr{U}}
+\newcommand{\Iscr}{\mathscr{I}}         \newcommand{\Vscr}{\mathscr{V}}
+\newcommand{\Jscr}{\mathscr{J}}         \newcommand{\Wscr}{\mathscr{W}}
+\newcommand{\Kscr}{\mathscr{K}}         \newcommand{\Xscr}{\mathscr{X}}
+\newcommand{\Lscr}{\mathscr{L}}         \newcommand{\Yscr}{\mathscr{Y}}
+\newcommand{\Mscr}{\mathscr{M}}         \newcommand{\Zscr}{\mathscr{Z}}
+
+% Lowercase
+\newcommand{\ascr}{\mathscr{a}}         \newcommand{\nscr}{\mathscr{n}}
+\newcommand{\bscr}{\mathscr{b}}         \newcommand{\oscr}{\mathscr{o}}
+\newcommand{\cscr}{\mathscr{c}}         \newcommand{\pscr}{\mathscr{p}}
+\newcommand{\dscr}{\mathscr{d}}         \newcommand{\qscr}{\mathscr{q}}
+\newcommand{\escr}{\mathscr{e}}         \newcommand{\rscr}{\mathscr{r}}
+\newcommand{\fscr}{\mathscr{f}}         \newcommand{\sscr}{\mathscr{s}}
+\newcommand{\gscr}{\mathscr{g}}         \newcommand{\tscr}{\mathscr{t}}
+\newcommand{\hscr}{\mathscr{h}}         \newcommand{\uscr}{\mathscr{u}}
+\newcommand{\iscr}{\mathscr{i}}         \newcommand{\vscr}{\mathscr{v}}
+\newcommand{\jscr}{\mathscr{j}}         \newcommand{\wscr}{\mathscr{w}}
+\newcommand{\kscr}{\mathscr{k}}         \newcommand{\xscr}{\mathscr{x}}
+\newcommand{\lscr}{\mathscr{l}}         \newcommand{\yscr}{\mathscr{y}}
+\newcommand{\mscr}{\mathscr{m}}         \newcommand{\zscr}{\mathscr{z}}
+
+% -------------------------------------------- %
+%               Bold Math Letters              %
+% -------------------------------------------- %
+
+% Uppercase
+\newcommand{\Abold}{\mathbf{A}}         \newcommand{\Nbold}{\mathbf{N}}
+\newcommand{\Bbold}{\mathbf{B}}         \newcommand{\Obold}{\mathbf{O}}
+\newcommand{\Cbold}{\mathbf{C}}         \newcommand{\Pbold}{\mathbf{P}}
+\newcommand{\Dbold}{\mathbf{D}}         \newcommand{\Qbold}{\mathbf{Q}}
+\newcommand{\Ebold}{\mathbf{E}}         \newcommand{\Rbold}{\mathbf{R}}
+\newcommand{\Fbold}{\mathbf{F}}         \newcommand{\Sbold}{\mathbf{S}}
+\newcommand{\Gbold}{\mathbf{G}}         \newcommand{\Tbold}{\mathbf{T}}
+\newcommand{\Hbold}{\mathbf{H}}         \newcommand{\Ubold}{\mathbf{U}}
+\newcommand{\Ibold}{\mathbf{I}}         \newcommand{\Vbold}{\mathbf{V}}
+\newcommand{\Jbold}{\mathbf{J}}         \newcommand{\Wbold}{\mathbf{W}}
+\newcommand{\Kbold}{\mathbf{K}}         \newcommand{\Xbold}{\mathbf{X}}
+\newcommand{\Lbold}{\mathbf{L}}         \newcommand{\Ybold}{\mathbf{Y}}
+\newcommand{\Mbold}{\mathbf{M}}         \newcommand{\Zbold}{\mathbf{Z}}
+
+% Lowercase
+\newcommand{\abold}{\mathbf{a}}         \newcommand{\nbold}{\mathbf{n}}
+\newcommand{\bbold}{\mathbf{b}}         \newcommand{\obold}{\mathbf{o}}
+\newcommand{\cbold}{\mathbf{c}}         \newcommand{\pbold}{\mathbf{p}}
+\newcommand{\dbold}{\mathbf{d}}         \newcommand{\qbold}{\mathbf{q}}
+\newcommand{\ebold}{\mathbf{e}}         \newcommand{\rbold}{\mathbf{r}}
+\newcommand{\fbold}{\mathbf{f}}         \newcommand{\sbold}{\mathbf{s}}
+\newcommand{\gbold}{\mathbf{g}}         \newcommand{\tbold}{\mathbf{t}}
+\newcommand{\hbold}{\mathbf{h}}         \newcommand{\ubold}{\mathbf{u}}
+\newcommand{\ibold}{\mathbf{i}}         \newcommand{\vbold}{\mathbf{v}}
+\newcommand{\jbold}{\mathbf{j}}         \newcommand{\wbold}{\mathbf{w}}
+\newcommand{\kbold}{\mathbf{k}}         \newcommand{\xbold}{\mathbf{x}}
+\newcommand{\lbold}{\mathbf{l}}         \newcommand{\ybold}{\mathbf{y}}
+\newcommand{\mbold}{\mathbf{m}}         \newcommand{\zbold}{\mathbf{z}}
