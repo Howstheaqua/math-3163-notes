@@ -12,7 +12,7 @@
 \begin{document}
 
 \maketitle
-\section{Appendix A$\colon$ Logic and Proof}
+\section{Appendix A Logic and Proof}
 \subsection*{Propositions}
 A \textbf{proposition} is a declarative statement that can be either true or false.
 
@@ -66,7 +66,7 @@ This method relies on the rule of logic called
 statement, then $S$ is a true statement.
 
 
-\textbf{Example$\colon$} To prove the theorem $ P \implies Q$ by the direct
+\textbf{Example$\colon$}(from the book) To prove the theorem $ P \implies Q$ by the direct
 method, you find a series of statements $P_1$, $P_2$,\ldots, $P_n$ 
 and the verify that each of the implications $P_n\implies P_{n+1}$ is true.
 Then
@@ -84,8 +84,35 @@ A \textbf{proof by contradiction} is a proof that shows that a statement is true
 
 To prove a multi conditional statement you must prove all parts of it.
 
-\section{Appendix B$\colon$ Sets and Functions}
+\section{Appendix B Sets and Functions}
+
 \subsection*{Sets}
 A \textbf{set} is a collection of objects.
+For Example $\mathbb{Z}$ is the set of all integers.
+$\emptyset$ is the empty set.
+
+\subsection*{Subsets}
+A set $B$ is said to be a subset of a set $C$ (written $B \subseteq C$) provided that every element of
+$B$ is also an element of $C$. Sets are also subsets of themselves
+
+\subsection*{Set Operations}
+Set operations are used to combine sets.
+\begin{itemize}
+    \item Union $\cup$ is the set of all elements that are in either set.
+    \item Intersection $\cap$ is the set of all elements that are in both sets.
+    \item Difference $\setminus$ is the set of all elements that are in the first set but not the second.
+    \item Complement $\bar{A}$ is the set of all elements that are not in the set.
+\end{itemize}
+
+\subsection*{Functions}
+A \textbf{function} is a rule that assigns to each element of a set exactly one element of another set.
+\textbf{Example$\colon$} A set $P$ of integers are mapped to a set $Q$ of real numbers by the function $f(x) = x^2$. This can also be written as $P \to Q$.
+
+\subsection*{Binary Operations}
+A \textbf{binary operation} is a function that takes two arguments and returns a single value.
+
+\subsection*{Injective and Surjective Functions}
+A function is \textbf{injective} if no two elements of the domain map to the same element of the range. Or it is \textbf{one-to-one}.
+
 
 \end{document}
