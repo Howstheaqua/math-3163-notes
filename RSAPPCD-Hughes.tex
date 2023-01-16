@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\graphicspath{ {images/} }
+
+\title{Reading Summary: Appendix C, D}
+\author{Evan Hughes}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+
+\section*{Appendix C Well Ordering and Induction}
+\subsection*{Well Ordering}
+The subset of nonnegative integers will be
+denoted by N. Thus 
+\begin{center}
+    $\mathbb{N}  = \{ 0,1,2,3,\ldots \}. $
+\end{center}
+
+\textbf{Well Ordering Axiom} \emph{Every nonempty set of } $\mathbb{N}$ \emph{contains a smallest a smallest element}
+This axiom might not hold if $\mathbb{N}$ is replaced with some other set of numbers.
+Well Ordering Axiom also creates the proof method known as \textbf{Induction}.
+Induction can be used to prove statements like 
+\begin{center}
+    A set of $n$ elements has $2^n$ subsets.
+\end{center}
+    
+Denote this statement by the symbol $P(n)$ and see that there are infinitely
+many statements, one for each possible value of n: 
+
+
+$P(0)\colon$ a set of 0 elements has $2^0 = 1$ subsets
+
+$P(1)\colon$ a set of 1 elements has $2^1 = 2$ subsets
+
+$P(2)\colon$ a set of 1 elements has $2^4 = 4$ subsets
+
+$P(3)\colon$ a set of 1 elements has $2^3 = 8$ subsets
+
+
+Then you can prove 
+\begin{center}
+    $P(n)$ is a true statement for $n \in \mathbb{N}$
+\end{center}
+
+\subsection*{Theorem C.1 The principle of Mathematical Induction}
+
+Assume that for each nonnegative Integer $n$, a statement $P(n)$ is given. If
+\begin{enumerate}
+    \item $P(0)$ is a true statement; and
+    \item Whenever $P(k)$ is true, then $P(k+1)$ is also true
+\end{enumerate}
+then $P(n)$ is a true statement for every $n \in \mathbb{N}$. 
+
+To use Induction you must make sure that your set satisfies both cases. Without satisfing both Induction does not work
+
+\textbf{Example$\colon$} Proof that $\frac{n(n+1)}{2}$ is the sum of the first $n$ nonnegative integers
+First you need to prove the base case $P(0)$
+\begin{equation}
+    P(0) = \frac{0(0+1)}{2} = 0
+\end{equation}
+this holds true, the sum of the first 0 nonnegative integers is 0.
+
+Next the inductive step, you need to prove that when $P(k)$ is true then $P(k+1)$ is also true
+\begin{equation}
+    P(k) = \frac{k(k+1)}{2}
+\end{equation}
+
+\begin{equation}
+    P(k+1) = \frac{(k+1)((k+1)+1)}{2} = \frac{(k+1)(k+2)}{2}
+\end{equation}
+
+then you need to prove that that is equal to $P(k) + (k+1)$
+
+\begin{equation}
+    \frac{k(k+1)}{2} + (k+1) = \frac{(k+1)(k+2)}{2} = P(k+1)
+\end{equation}
+this completes the induction because you have proven the when $P(k)$ is true then $P(k+1)$ is true. $\blacksquare$
+
+\subsection*{Theorem C.2 The principle of Complete Induction}
+
+\begin{enumerate}
+    \item $P(0)$ is a true statement; and
+    \item Whenever $P(j)$ is true for all $j$ such that $0 \leq j < t$, then $P(t)$ is also true
+\end{enumerate}
+then $P(n)$ is a true statement for every $n \in \mathbb{N}$.
+
+\textbf{Example$\colon$}(from the book) Proof of Theorem C.2
+
+For each $n \in \mathbb{N}$, let $Q(n)$ be the statement
+\begin{center}
+$P(J)$ is true for all $j$ such that $O \leq j \leq n$.
+\end{center}
+We will use Theorem C.1 to prove that $Q(n)$ is true for every $n \in \mathbb{N}$.
+Now $Q(O)$ is the statement
+\begin{center}
+    $P(J)$ is true for all $j$ such that $0 \leq j \leq 0$. 
+\end{center}
+
+This says, $Q(O)$ is just the statement ``$P(O)$ is true''. Assume that Q(k) is
+true, that is, 
+\begin{center}
+    $P(J)$ is true for all $j$ such that $O \leq j \leq k$.
+\end{center}
+
+By hypothesis (2) (with $t = k + 1$), we conclude the $P(k + 1)$ is also true.
+Therefore, $P(J)$ is true for all $j$ such that $O \leq j \leq k + 1$, that is, $Q(k + 1)$
+is a true statement. Thus we have shown that whenever $Q(k)$ is true, then
+$Q(k + 1)$ is also true. By the Principle of Mathematical Induction, $Q(n)$
+is true for every $n \in \mathbb{N}$, and the proof is complete. $\blacksquare$  
+
+\subsection*{Theorem C.3}
+
+Let $r$ be a positive integer and assume that for each $n \geq r$ a statement $P(n)$
+1s given. If
+(i) $P(r)$ is a true statement;
+and either
+(ii) Whenever $k \geq r$ and $P(k)$ is true, then $P(k + 1)$ is true;
+or
+(ii') Whenever $P(j)$ is true for all $j$ such that $r \leq j < t$, then $P(t)$ is true,
+then $P(n)$ is true for every $n \geq r$. 
+
+\subsection*{Theorem C.4}
+The following are equivalent
+\begin{enumerate}
+    \item The Well Ordering Axiom
+    \item The principle of Mathematical Induction
+    \item The principle of Complete Induction
+\end{enumerate}
+
+\section*{Appendix D Equivalence Relations}
+
+If $A$ is a set, then any subset of $A * A$ is called a relation on $A$. $A$ relation $T$ on $A$
+is called an \textbf{equivalence relation} provided that the subset $T$ is
+
+(i) \textbf{Reflexive}: $a ~ a \in T$ for every $a \in A$.
+
+(ii) \textbf{Symmetric}: If $a ~ b \in T$, then $b ~ a~$.
+
+(iii) \textbf{Transitive}: If $a ~ b \in T$ and $b ~ c  \in T$, then $a ~ c$. 
+
+\end{document}
