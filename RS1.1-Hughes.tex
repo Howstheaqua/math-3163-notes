@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\graphicspath{ {images/} }
+
+\title{1.1 The Division Algorithm}
+\author{Evan Hughes}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+
+\section*{Revisiting \integers}
+\integers{} is the set of all integers.  $\Z = \{ \pm 1, \pm 2, \pm 3, \ldots\}$.
+\vspace*{5mm}
+
+\textbf{Well Ordering Axiom}: Every non-empty set of integers has a smallest element.
+However this is not true for all sets.  For example, $\mathbb{R}$ does not have a smallest element.
+For any ratio $r$, there is always a smaller ratio $r/2$.
+This also does not hold true for \integers{} because there is no smallest negative integer. 
+
+
+\section*{Understanding Division}
+
+One can start by writing out what division is verbally. It can be written as: 
+\begin{center}
+    dividend = (quotient) $\times$ (divisor) + (remainder)
+\end{center}
+
+\subsection*{Theorem 1.1: The Division Algorithm}
+Let $a, b$ be Integers with $b > 0$. Then there exist unique Integers $q$ and $r$ such
+that
+\begin{center}
+    $a = bq + r$  and    $0 \leq{} r < b$.
+\end{center}
+\textbf{Theorem 1.1} allows for the possibility of the dividend $a$ being negative.
+However $r$, the remainder, is required to be positive and less than the divisor $b$.
+
+An \textbf{example} of why the last requirement is necessary is if $a = -14$ and $b = 3$
+as it leaves 3 possibilities for $q$ and $r$. If you require r to be non negative there is always one solution.
+
+\subsection*{Proof of Theorem 1.1}
+Let $a$ and $b$ be integers with $b > 0$. 
+Consider the set $S$ of all integers of the form
+\begin{center}
+    $a - bx$, where x is an integer and $a - bx \geq{} 0$.
+\end{center}
+
+\textbf{Step 1}: Show that $S$ is non-empty.
+You do this by finding a value for x such that $a-bx \geq{} 0$.
+$a-bx$ is in $S$ when $x = \left\lvert -a\right\rvert $, which means $S$ is nonempty.
+\medskip
+
+\textbf{Step 2}: Find $q$ and $r$ such that $a = bq + r$ and $0 \leq{} r < b$.
+By the \textbf{Well Ordering Axiom}, $S$ has a smallest element.  This smallest element is $r$.
+Since $r \in S \implies r \geq 0$ and $r = a -bx$ for some $x$, like $x = q$.
+Meaning $a = bq +r$ and $r \geq 0$.
+
+\textbf{Step 3}: Show that $r < b$.
+To show that $r < b$, we must show that $r \geq b$ is false. Then $r-b\geq 0$, so that
+\begin{center}
+    $0 \leq r-b=( a-bq) -b =  a-b( q+1)$.
+
+    $a-b( q+1) = r-b < r$.
+
+    $a=bq+$ and $0\leq r <b$
+\end{center}
+
+\textbf{Step 4}: Show that r and q are the only numbers with these properties.
+To prove uniqueness, we suppose that there are integers
+$q_1$ and $r_1$ such that $a = bq_1 + r_1$ and $0 \leq r_1 < b$, and prove that $q_1 = q$
+and $r_1 = r$.
+\end{document}
