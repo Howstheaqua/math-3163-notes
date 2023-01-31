@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\usepackage{scrextend}
+\usepackage{ifthen}
+\usepackage{listings}
+\graphicspath{ {images/} }
+
+\newcommand{\gfcb}[1]{%
+    \fcolorbox{white}{gray!10!}{\quad\strut #1\quad}
+    }
+\newcommand{\cop}[1]{%
+    \texttt{\detokenize{#1}}
+    }
+
+\title{Homework 1}
+\author{Evan Hughes}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Prove that $\sqrt{2}$ is not a rational number.
+    %%%%%%%%%%%%%%%%%%%%
+    
+    \begin{enumerate}
+        \item Write down a descripton of the rational numbers $\mathbb{Q}$ in set builder notation.
+        \begin{equation}
+        \mathbb{Q} = \{ \frac{a}{b} \mid a,b \in \mathbb{Z}, b \neq 0 \}
+        \end{equation}
+        \item Write down a definition of $\sqrt{2}$.
+        \begin{equation}
+        \sqrt{2} = \frac{x}{y}
+        \end{equation}
+        \item Use (a) and (b) to derive a contradiction proving that $\sqrt{2}$ cannot be rational.
+        
+        As written in (a) a rational number can be expressed as a ratio of two integers. To show that $\sqrt{2}$ is not
+        rational we must show that it cannot be expressed as a ratio of two integers.
+        We start by assuming $\sqrt{2}$ can be written as a ratio of two integers.
+        If those integers share a common factor, then the fraction can be reduced to lowest terms by the Euclidean algorithm.
+        Then $\sqrt{2}$ can be written as $\frac{a}{b}$ where $a,b$ are coprime. 
+        $b$ are two coprime integers, which by definition means one will be odd.
+        This means that $\frac{a^2}{b^2}=2 \rightarrow a^2=2b^2$. Therefore $a^2$ is even because it is $2$ times an integer.
+        Because $a^2$ is even, $a$ must also be even. By the definition of even numbers $a$ can be written as 
+        $2k$ where $k$ is an integer. Substituting this into the equation $a^2=2b^2$ we get ${( 2k) }^2=2b^2$ which is equivalent to $b^2 = 2k^2$.
+        This means that $b^2$ is even because it is $2$ times an integer. Because $b^2$ is even, $b$ must also be even.
+        Because both $a$ and $b$ are both even they are both divisible by $2$ which contradicts the fact that they are coprime.
+        Therefore $\sqrt{2}$ cannot be written as a ratio of two integers.
+
+    \end{enumerate}
+    
+    %%%%%%%%%%%%%%%%%%%%
+    \item Use the Division Algorithm to prove that every odd integer is either in the form $4k+1$ or $4k+3$ for some $k \in \mathbb{Z}$.
+    %%%%%%%%%%%%%%%%%%%%
+    Let $a$ be an odd integer, meaning $a=2n+1$ for some $n \in \mathbb{Z}$. We will prove that $a$ is either in the form $4k+1$ or $4k+3$ for some $k \in \mathbb{Z}$.
+    Using the division algorithm to divide $a$ by $4$ we get $a=4q+r$ where $q \in \mathbb{Z}$ and $r \in \{0,1,2,3\}$.
+    
+    If $r=0$ then $a=4q$ meaning $a$ is even because $a=2(2q)$ which is 2 times and integer.
+
+    If $r=1$ then $a=4q+1$ meaning $a$ is in the form $4k+1$ for some $k \in \mathbb{Z}$. $4k+1$ is odd because it is equivalent to $2(2k)+1$ which is 2 times and integer plus 1.
+
+    If $r=2$ then $a=4q+2$ meaning $a$ is even because $a=2(2q+1)$ which is 2 times and integer.
+
+    If $r=3$ then $a=4q+3$ meaning $a$ is in the form $4k+3$ for some $k \in \mathbb{Z}$. $4k+3$ is odd because it is equivalent to $2(2k+1)+1$ which is 2 times and integer plus 1.
+
+    Therefore any odd integer is in the form $4k+1$ or $4k+3$ for some $k \in \mathbb{Z}$.
+
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Which of the following sets are nonempty? Explain your answer for each.
+    %%%%%%%%%%%%%%%%%%%%
+
+    \begin{enumerate}
+        \item $A = \{ r \in \mathbb{Q} \colon r^2 = 2 \}$
+        
+        Is empty because $r^2 = 2 \rightarrow r = \sqrt{2}$ which is irrational and not in $\mathbb{Q}$.
+        \item $B = \{ r \in \mathbb{R} \colon r^2 + 5r - 7 = 0 \}$
+        
+        Is nonempty because $\frac{-5 \pm \sqrt{53}}{2} \in B$.
+        \item $C = \{ t \in \mathbb{Z} \colon 6t^2 - t - 1 = 0 \}$
+        
+        Is nonempty because $6t^2-5-1=0 has no integer solutions$.
+    \end{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Prove the Extended Division Algorithm.
+    %%%%%%%%%%%%%%%%%%%%
+
+    \begin{center}
+        \textit{If $a,b \in \mathbb{Z}$ and $b \neq 0$ then there exist a unique pair}
+        
+        \textit{$( q,r) \in \mathbb{Z}^2$ such that $a = bq + r$ and $0 \leq r < b$}
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item  Explain what is wrong with the following proof that reflexivity is unnecessary in the definition
+    of an equivalence relation.
+    %%%%%%%%%%%%%%%%%%%%
+    \begin{addmargin}[2em]{3em}
+    \textit{Proof}: Suppose $\sim$ is an equivalence relation on a nonempty set $X$ and that $a, b \in X$.
+    If $a \sim b$, then by symmetry we must have that $b \sim a$. Now, by transitivity, we have
+    that $a \sim b$ and $b \sim a$ implies that $a \sim a$. Therefore, if $\sim$ is symmetric and transitive,
+    then $\sim$ is reflexive.
+    \end{addmargin}
+    Then give an example of a set $X$ and a relation $R$ on it which is both symmetric and transitive, but not reflexive.
+    %%%%%%%%%%%%%%%%%%%%
+
+
+\end{enumerate}
+\section*{\LaTeX Exercises}
+\begin{enumerate}
+    \item Construct the following displays.
+    \begin{equation}
+        1_A=\{ \genfrac{}{}{0px}{}{1 \text{ if } x \in A}{0 \text{ if } x \notin A}
+    \end{equation}
+    \begin{equation}
+        \sqrt[3]{2}
+    \end{equation}
+    \begin{equation}
+        \frac{d}{d x}f(x)=\lim_{\Delta x \to 0}\frac{f(x+\Delta x)-f(x)}{\Delta  x}  
+    \end{equation}
+    \begin{equation}
+        \mathbb{Q} = \left \{  \frac{a}{b} \colon a,b \in \mathbb{R} \text{ and } b \neq 0  \right \} / \sim
+        \frac{a}{b} \sim \frac{c}{d} \iff ad-bc=0
+    \end{equation}
+    \item Use the \textit{ifthen} and \textit{amsmath} packages to write a command called \textbf{$\backslash$ piecewise} that will display
+    a piecewise function.
+
+    \newcommand{\piecewise}[1][1]{
+        \ifthenelse{#1=1}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)
+            \end{cases}}{}
+        \ifthenelse{#1=2}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)\\
+                f_2(x)| \psi_2(x)
+            \end{cases}}{}
+        \ifthenelse{#1=3}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)\\
+                f_2(x)| \psi_2(x)\\
+                f_3(x)| \psi_3(x)
+            \end{cases}}{}
+            }
+    \cop{\newcommand{\piecewise}[1][1]{
+        \ifthenelse{#1=1}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)
+            \end{cases}}{}
+        \ifthenelse{#1=2}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)\\
+                f_2(x)| \psi_2(x)
+            \end{cases}}{}
+        \ifthenelse{#1=3}{
+            f(x)=\begin{cases}
+                f_1(x)| \psi_1(x)\\
+                f_2(x)| \psi_2(x)\\
+                f_3(x)| \psi_3(x)
+            \end{cases}}{}
+            }}
+    
+    Example:        $\piecewise[2]$ 
+\end{enumerate}
+    
+\end{document}

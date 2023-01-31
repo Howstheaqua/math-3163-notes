@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\graphicspath{ {images/} }
+
+\title{Reading Summary 2.1-2.2}
+\author{Evan Hughes}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+\section*{2.1 Congruence and Congruence Classes}
+\textbf{Definition}: Let $a, b, n$ be integers with $n>0$. Then a is congruent to $b$ modulo $n$. Written as $a \equiv b \pmod{n}$ if and only if $a-b$ is a multiple of $n$.\\
+
+\subsection*{Example}: (from the book) $17 \equiv 5 \pmod{6}$ because $6$ divides $17-5=12$. Also, $4 \equiv 25 \pmod{7} $ because $7$ divides $4-25=-21$.\\
+
+\textbf{reflexive:} $a=a$ for all integers $a$.
+
+\textbf{symmetric:} if $a=b$, then $b=a$.
+
+\textbf{transitive:} if $a=b$ and $b=c$, then $a=c$.
+
+Using these properties, we can prove that $a \equiv b \pmod{n}$ is reflexive, symmetric, and transitive.\\
+
+\subsection*{Theorem 2.1}
+
+Let $n$ be a postive integer. For all $a,b,c \in \mathbb{Z}$,
+
+\begin{enumerate}
+    \item $a \equiv a \pmod{n}$;
+    \item if $a \equiv b \pmod{n}$, then $b \equiv a \pmod{n}$;
+    \item if $a \equiv b \pmod{n}$ and $b \equiv c \pmod{n}$, then $a \equiv c \pmod{n}$.
+\end{enumerate}
+
+\subsection*{Theorem 2.2}
+If $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$, then
+\begin{enumerate}
+    \item $a+c \equiv b+d \pmod{n}$.
+    \item $ac \equiv bd \pmod{n}$.
+\end{enumerate}
+
+\textbf{Definition}: Let $a$ and $n$ be integers with $n>0$. The congruence class of a modulo n, $[a]$
+is the set of all those integers that are congruent to a modulo $n$.
+\begin{center}
+    $[a] = \{b\mid b \in \mathbb{Z}$ and $b \equiv a \pmod{n}\}$
+\end{center}
+
+\subsection*{Example:}
+In congruence modulo 2:
+\begin{center}
+    $[1] = \{\pm1,\pm3,\pm5,\cdots\}$
+\end{center}
+
+\subsection*{Theorem 2.3}
+$a \equiv c \pmod{n}$ if and only if $[a]=[c]$.
+
+\subsection*{Corollary 2.4}
+Two congruence classes modulo $n$ are either disjoint or identical.
+
+\subsection*{Corollary 2.5}
+Let $n > 1$ be an integer and consider congruence modulo $n$.
+\begin{enumerate}
+    \item If $a$ is any integer and $r$ is the remainder when $a$ is divided by $n$, then $[a]=[r]$.
+    \item IThere are exactly $n$ distinct congruence classes, $[0], [1], \cdots, [n-1]$.
+\end{enumerate}
+
+\textbf{Definition:} The set of all congruence classes modulo $n$ is denotes $\mathbb{Z}_n$.
+
+\section*{2.2 Modular Arithmetic}
+The sum of the classes $[a]$ and $[b]$ is the class $[a+b]$. The product of the classes $[a]$ and $[b]$ is the class $[ab]$.\\
+
+\subsection*{Theorem 2.6}
+If $[a]$ = $[b]$ and $[c]$ = $[d]$ in $\mathbb{Z}_n$, then $[a+c]$ = $[b+d]$ and $[ac]$ = $[bd]$.
+
+\begin{tabular}{||c c c||}
+    $\oplus$ & $[0]$ & $[1]$ \\
+    $[0]$ & $[0]$ & $[1]$ \\
+    $[1]$ & $[1]$ & $[2]$ \\
+
+\end{tabular}
+\end{document}
