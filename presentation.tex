@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\usepackage{scrextend}
+\usepackage{ifthen}
+\usepackage{listings}
+\graphicspath{ {images/} }
+
+\newcommand{\gfcb}[1]{%
+    \fcolorbox{white}{gray!10!}{\quad\strut #1\quad}
+    }
+\newcommand{\cop}[1]{%
+    \texttt{\detokenize{#1}}
+    }
+
+\title{Homework 3 problem 6, presentation}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Prove the following statements.
+    %%%%%%%%%%%%%%%%%%%%
+    
+    \begin{enumerate}
+        \item If $a \in \mathbb{Z}_n$ is a unit, then $a$ is not a divisor of zero.
+        
+        Let $a$ be a unit of $\mathbb{Z}_n$, and assume $a$ is a divisor of zero. 
+        
+        Because $a$ is a unit there exists $b \in \mathbb{Z}_n$ such that $ab = 1$. 
+        And because $a$ is a divisor of zero there exists
+        $c \in \mathbb{Z}_n$ such that $ac = 0$ where $c \neq 0$.
+
+        $[0] = [0 * b]$
+
+        $0 = b(ac)$
+
+        $0 = (ba)c$
+
+        $0 = (1)c$
+
+        $0 = c$
+
+        Which is a contradiction. Therefore, $a$ is not a divisor of zero.
+
+        \item If $a \in \mathbb{Z}_n$ is not a divisor of zero, then $a$ is a unit.
+        
+        Contrapositive of the previous statement. If $a$ is not a unit, then $a$ is a divisor of zero.
+
+        If $a$ is not a unit of $\mathbb{Z}_n$, then gcd($a$, $n$) $= k \neq 1$.
+
+        Then let $c = \frac{n}{k}$, $c \in \mathbb{Z}$, and so $0<c<n$ and $b \in \mathbb{Z}_n$.
+
+        $ac = a(\frac{n}{k})= (\frac{a}{k})n$
+
+        Since $k \mid a$, $ac$ is equal to an integer times $n$
+        Therefore $ac = 0$. Meaning $a$ is a divisor of zero.
+
+        Because the contrapositive is true, the original statement is true.
+        
+
+    \end{enumerate}
+
+\end{enumerate}
+    
+\end{document}
