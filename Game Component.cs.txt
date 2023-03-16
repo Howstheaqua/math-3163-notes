@@ -1,0 +1,39 @@
+Game Component
+{
+	PlayerList[]
+	OZList[]
+
+	StartGameComponent
+	{
+		SetOZAmount()
+		{
+			// Set the amount of OZs
+		}
+
+		SetOZs()
+		{
+			// Sets a randomly selected group of players as OZs
+		}
+
+		SetOZPoolPassword(string password)
+		{
+			// Set the OZ pool password
+			// Set a flag that a password has been set to protect the OZ pool
+			// Is called from a button next to a text box that 
+		}
+
+		SetDefaultRole(Role role)
+		{
+			// Set the default role
+			// is called from a button next to a drop down list of possible roles
+			// takes the selected role from the drop down lists and sets it as the default role for the game
+		}
+
+		StartGame()
+		{
+			// Start the game
+			// Is called from a button on the component
+			// Calls the IsActive method for the game.
+		}
+	}
+}

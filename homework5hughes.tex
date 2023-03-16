@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\usepackage{scrextend}
+\usepackage{ifthen}
+\usepackage{listings}
+\graphicspath{ {images/} }
+
+\newcommand{\gfcb}[1]{%
+    \fcolorbox{white}{gray!10!}{\quad\strut #1\quad}
+    }
+\newcommand{\cop}[1]{%
+    \texttt{\detokenize{#1}}
+    }
+
+\title{Homework 2}
+\author{Evan Hughes}
+\date{January 2023}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Let $R$ be a ring and fix $b \in R$.
+    %%%%%%%%%%%%%%%%%%%%
+    
+    \begin{enumerate}
+        \item Show that $S = {n1_R \in R : n \in \mathbb{Z}}$ is a subring of $R$.
+        \item Show that $T = {rb \in R : r \in \mathbb{Z}}$ is a subring of $R$.
+        \item Is $M = {nb \in R : n \in \mathbb{Z}}$ always a subring of R? If no, give a counterexample. If yes, prove it.
+    \end{enumerate}
+    
+    %%%%%%%%%%%%%%%%%%%%
+    \item Let $R$ be a ring.
+    %%%%%%%%%%%%%%%%%%%%
+    \begin{enumerate}
+        \item Show that $R$ has exactly on zero, $0_R$.
+        \item If $R$ also has an identity, $1_R$, show that $1_R$ is the only identity.
+        \item Can a unit in $R$ have more than one inverse? If yes, give an example. If no, prove it.
+    \end{enumberate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Let $R$ be a ring and $S, T$ be subrings of $R$. In each of the following cases, provide a proof if the answer is yes, and provide a counterexample if the answer is no.
+    %%%%%%%%%%%%%%%%%%%%
+    \begin{enumerate}
+        \item Is $S \cap T$ a subring of $R$?
+        \item Is $S \cup T$ a subring of $R$?
+        \item If either $S \cap T$ or $S \cup T$ is not a subring of $R$, can they be extended to a subring of $R$? If so, explain how.
+        \item Let $I$ be an arbitrary index set and ${S_i \subseteq R:\forall i \in I, S_i \leq R}$ an $I$-indexed set of subring of $R$. Is $\cap{S_i: i \in I}$ a subring
+    \end{enumerate}
+\end{enumerate}
+    
+\end{document}
