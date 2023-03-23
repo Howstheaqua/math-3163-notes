@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{BeginnerStyleFile}
+\graphicspath{ {images/} }
+
+\title{Reading Summary 4.5-4.6}
+\author{Evan Hughes}
+\date{March 2023}
+
+\begin{document}
+\maketitle
+\section*{4.5 Irreduciblity in $\mathbb{Q}[x]$}
+
+If $f(x) \equiv \mathbb[x]$, then $cf(x)$ has integer coefficients for some nonzero integer $c$.
+
+\subsection*{Example(from the book)}
+$f(x) = x^5 + \frac{2}{3}x^4 + \frac{3}{4}x^3 - \frac{1}{6}$
+
+The least common denominator of the coefficients is 12
+
+Then $12f(x) = 12[x^5 + \frac{2}{3}x^4 + \frac{3}{4}x^3 - \frac{1}{6}] = 12x^5 + 8x^4 + 9x^3 -2$
+
+\subsection*{Theorem 4.21 Rational Root Test}
+
+Let $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ be a polynomial with integer coefficients. 
+If $r\neq 0$ and the rational number $r/s$ is a root of $f(x)$ then $r\mid a_0$ and $s\mid a_n$.
+
+\subsection*{Lemma 4.22}
+Let $f(x),g(x),h(x) \in \mathbb{Z}[x]$ with $f(x) = g(x)h(x)$. If p is a prime that divides every coefficient of $f(x)$, then either
+$p$ divides every coefficient of $g(x)$ or $p$ divides every coefficient of $h(x)$.
+
+\subsection*{Theorem 4.23}
+Let $f(x)$ be a polynomial with integer coefficients. Then $f(x)$ factors as 
+a product of polynomials of degrees $m$ and $n$ in $\mathbb{Q}[x]$ if and only if $f(x)$ factors as a product
+of polynomials of degree $m$ and $n$ in $\mathbb{Z}[x]$.
+
+\subsection*{Proof of Theorem 4.23}
+Obviously, if $f(x)$ factors in $\mathbb{Z}[x]$, it factors in $\mathbb{Q}[x]$. Conversely, suppose
+$f(x)= g(x)l(x)$ in $\mathbb{Q}[x]$. Let $c$ and $d$ be nonzero integers such that $cg(x)$
+and $dh(x)$ have integer coefficients. Then $cdf(x) = [cg(x)dh(x)]$ in $\mathbb{Z}[x]$
+with deg $cg(x) = $deg $g(x)$and deg $dh(x) =$ deg $h(x)$. Let $p$ be any prime
+divisor of $cd$. Then $p$ divides every coefficient of the polynomial $cdf(x)$. By Lemma 4.22, $p$ divides either~ every coefficient of $cg(x)$
+or every coefficient of $dh(x)$. Then $cg(x) = pk(x)$ with
+$k(x) \in \mathbb{Z}[x]$ and deg $k(x) = $deg $g(x)$. Therefore, $ptf(x) = cdf(x) =
+[cg(x)][dh(x)] = [pk(x)][dh(x)]$. Canceling $p$ on each end, we have
+$tf(x) = k(x)[chh(x)] \in \mathbb{Z}[x]$.
+
+
+\section*{Section 4.6 Irreduciblity in $\mathbb{R}[x]$ and $\mathbb{C}[x]$}
+
+\subsection*{Theorem 4.26}
+Every nonconstant polynomial in $\mathbb{C}[x]$ has a root in $\mathbb{C}$.
+
+THis theorem is also stated as $\mathbb{C}$ is algebraically closed. 
+
+\subsection*{Corollary 4.27} A polynomial is irreducible in $\mathbb{C}[x]$ if and only if it has degree 1.
+
+\subsection*{Proof}
+A polynomial $f(x)$ of degree $\geq 2$ in $\mathbb{C}[x]$ hence a first degree factor by the Factor Theorem.
+Therefore $f(x)$ is reducible in $\mathbb{C}[x]$. And every irreducible polynomial in $\mathbb{C}[x]$ has degree 1.
+
+\subsection*{Eisenstein's Criterion}
+Let $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ be a non constant polynomial with integer coefficients.
+If there is a prime $p$ such that it divides each coefficient of $f(x)$ and $p$ does not divide $a_n$ and $p^2$ does not divide $a_0$, then $f(x)$ is irreducible in $\mathbb{Q}[x]$.
+
+\subsection*{Example}
+The polynomial $x^9 +5$ is irreducible in $\mathbb{Q}[x]$ with Eisenstein's Criterion $p = 5$.
+
+
+
+\end{document}
